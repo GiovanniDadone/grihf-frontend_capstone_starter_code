@@ -1,0 +1,44 @@
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  position: fixed; /* Ensure landing page covers the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.landing-page button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* No need for specific .home-page styles as it's controlled by conditional rendering */
+
+.home-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+p {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #333;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.5;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+}
