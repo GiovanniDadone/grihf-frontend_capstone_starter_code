@@ -1,7 +1,34 @@
 nav {
   background-color: #ffffff;
   padding: 10px;
-  flex: auto;
+  display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
+  text-decoration: none;
+  font-size: larger;
+}
+
+.no_underline {
+  margin-right: 30px;
+  font-size: large;
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border-width: 1px;
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: large;
+  color: blue; /* Blue text color */
+  background-color: transparent; /* Transparent background */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  margin-top: -10px;
+}
+
+.btn:hover {
+  color: white; /* White text on hover */
+  background-color: blue; /* Blue background on hover */
 }

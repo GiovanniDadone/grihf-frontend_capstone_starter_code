@@ -10,21 +10,19 @@ const App: React.FC = () => {
     <Router>
       <nav>
         <div>
-          {" "}
-          <Link to="/">Home</Link>
+          <Link className="no_underline" to="/">Home</Link>
         </div>
         <div>
-          {" "}
-          <Link to="/appointments">Appointments</Link>
+          <Link className="no_underline" to="/appointments">Appointments</Link>
         </div>
         <div>
-          {" "}
-          <Link to="/healthblog">Health Blog</Link>
+          <Link className="no_underline" to="/healthblog">Health Blog</Link>
         </div>
         <div>
-          {" "}
-          <Link to="/reviews">Reviews</Link>
+          <Link className="no_underline" to="/reviews">Reviews</Link>
         </div>
+        <button className="btn" >Login</button>
+        <button className="btn" >Register</button>
       </nav>
       <Routes>
         <Route
