@@ -1,7 +1,7 @@
-import Home from "./Pages/Home/Home";
-import Reviews from "./Pages/Reviews/Reviews";
-import Appointments from "./Pages/Appointments/Appointments";
-import HealthBlog from "./Pages/HealthBlog/Healthblog";
+import Home from "./components/Home";
+import Reviews from "./components/Reviews";
+import Appointments from "./components/Appointments";
+import HealthBlog from "./components/Healthblog";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 
