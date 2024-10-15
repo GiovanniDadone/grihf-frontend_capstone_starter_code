@@ -1,5 +1,5 @@
 import React from "react";
-import { RegisterProps } from "../App";
+import { RegisterProps } from "../types";
 
 const Register: React.FC<RegisterProps> = ({
   username,
@@ -10,6 +10,8 @@ const Register: React.FC<RegisterProps> = ({
   setEmail,
   setIsLoggedIn,
 }) => {
+  const [showPassword, setShowPassword] = React.useState(false);
+ 
   const handleRegister = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -53,12 +55,17 @@ const Register: React.FC<RegisterProps> = ({
       <div>
         <label htmlFor="password">Password:</label>
         <input
-          type="password"
+          type={showPassword ? "text" : "password"}
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+        <button
+          type="button"
+          onClick={() => setShowPassword(!showPassword)}>
+          {showPassword ? "Hide" : "Show"}
+        </button>
       </div>
       <button type="submit">Register</button>
     </form>

@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
-import './Home.css';
+import { useState, useEffect } from "react";
+import "./Home.css";
+import { HomeProps } from "../types";
+import TrueHome from "./TrueHome";
 
-const Home = () => {
+const Home: React.FC<HomeProps> = ({ isLoggedIn }) => {
   const [showLanding, setShowLanding] = useState(true);
-
   useEffect(() => {
-    const hasSeenLanding = sessionStorage.getItem('hasSeenLanding');
+    const hasSeenLanding = sessionStorage.getItem("hasSeenLanding");
     if (hasSeenLanding) {
       setShowLanding(false);
     }
@@ -13,7 +14,7 @@ const Home = () => {
 
   const handleGetStarted = () => {
     setShowLanding(false);
-    sessionStorage.setItem('hasSeenLanding', 'true');
+    sessionStorage.setItem("hasSeenLanding", "true");
   };
 
   return (
@@ -25,10 +26,7 @@ const Home = () => {
         </div>
       ) : (
         <div className="home-page">
-            <p>Instant Consultation</p>
-            <p>Book an Appointment</p>
-            <p>Self Check-up</p>
-            <p>Health Tips & Guidance</p>
+          <TrueHome isLoggedIn={isLoggedIn} />
         </div>
       )}
     </div>

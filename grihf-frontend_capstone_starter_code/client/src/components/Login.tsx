@@ -1,5 +1,5 @@
 import React from "react";
-import { LoginProps } from "../App";
+import { LoginProps } from "../types";
 
 const UserForm: React.FC<LoginProps> = ({
   username,
@@ -11,6 +11,8 @@ const UserForm: React.FC<LoginProps> = ({
   setEmail,
   handleLogin,
 }) => {
+  const [showPassword, setShowPassword] = React.useState(false);
+
   const submitNavigate = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(isLoggedIn);
@@ -30,16 +32,7 @@ const UserForm: React.FC<LoginProps> = ({
             required
           />
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
+
         <div>
           <label htmlFor="email">Email:</label>
           <input
@@ -49,6 +42,21 @@ const UserForm: React.FC<LoginProps> = ({
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            type={showPassword ? "text" : "password"}
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}>
+            {showPassword ? "Hide" : "Show"}
+          </button>
         </div>
         <button type="submit">Submit</button>
       </form>
