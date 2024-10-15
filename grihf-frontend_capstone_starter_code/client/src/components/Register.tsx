@@ -1,7 +1,6 @@
 import React from "react";
 import { RegisterProps } from "../App";
 
-
 const Register: React.FC<RegisterProps> = ({
   username,
   password,
@@ -9,8 +8,9 @@ const Register: React.FC<RegisterProps> = ({
   setUsername,
   setPassword,
   setEmail,
+  setIsLoggedIn,
 }) => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleRegister = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     // Create user object
@@ -22,8 +22,14 @@ const Register: React.FC<RegisterProps> = ({
     // Redirect to the home page after registration
   };
 
+  const submitNavigate = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    handleRegister(event);
+    setIsLoggedIn(false);
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={submitNavigate}>
       <div>
         <label htmlFor="username">Username:</label>
         <input

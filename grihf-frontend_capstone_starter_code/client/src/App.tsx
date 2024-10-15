@@ -5,7 +5,7 @@ import HealthBlog from "./components/Healthblog";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import Login from "./components/Login";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Register from "./components/Register";
 
 export interface LoginProps {
@@ -14,6 +14,11 @@ export interface LoginProps {
   password: string;
   setUsername: (username: string) => void;
   setPassword: (password: string) => void;
+  setIsLoggedIn: (isLoggedIn: boolean) => void;
+  isLoggedIn: boolean;
+  email: string;
+  setEmail: (email: string) => void;
+  handleLogin: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
 export interface RegisterProps {
@@ -23,6 +28,7 @@ export interface RegisterProps {
   setUsername: (username: string) => void;
   setPassword: (password: string) => void;
   setEmail: (email: string) => void;
+  setIsLoggedIn: (isLoggedIn: boolean) => void;
 }
 
 const App: React.FC = () => {
@@ -30,33 +36,50 @@ const App: React.FC = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [email, setEmail] = useState<string>("");
-  useEffect(() => {
-    // Check if user is already logged in
+
+
+  const checkUser = (inputUsername: string, inputPassword: string, inputEmail: string) => {
     const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setIsLoggedIn(true);
+
+    if (!storedUser) {
+        return false;
     }
-  }, []);
+
+    const { username, password, email } = JSON.parse(storedUser);
+
+    return (
+        username === inputUsername &&
+        password === inputPassword &&
+        email === inputEmail
+    );
+};
+
+const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const isValidUser = checkUser(username, password, email);
+    if (isValidUser) {
+        setIsLoggedIn(true);
+        console.log("Login successful!");
+    } else {
+        console.log("Invalid username, password, or email.");
+    }
+};
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
+    
     // Create user object
-    const user = {
-      username,
-      password,
-    };
-    console.log(user);
+    const user = { username, password, email };
 
     // Store user object in localStorage
     localStorage.setItem("user", JSON.stringify(user));
 
-    // Optionally clear the form
+    // Clear input fields after storing
     setUsername("");
     setPassword("");
-
-    // Redirect to home after storing user
-  };
+    setEmail("");
+};
 
   const handleLogout = () => {
     // Clear user data from localStorage
@@ -105,7 +128,6 @@ const App: React.FC = () => {
               to="/login">
               Login
             </Link>
-
             <Link
               className="no_underline"
               to="/register">
@@ -136,6 +158,11 @@ const App: React.FC = () => {
               password={password}
               setPassword={setPassword}
               handleSubmit={handleSubmit}
+              setIsLoggedIn={setIsLoggedIn}
+              setEmail={setEmail}
+              email={email}
+              isLoggedIn={isLoggedIn}
+              handleLogin={handleLogin}
             />
           }></Route>
         <Route
@@ -148,11 +175,11 @@ const App: React.FC = () => {
               setPassword={setPassword}
               email={email}
               setEmail={setEmail}
+              setIsLoggedIn={setIsLoggedIn}
             />
           }></Route>
       </Routes>
     </Router>
   );
 };
-
 export default App;
