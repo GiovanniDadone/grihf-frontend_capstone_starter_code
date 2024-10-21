@@ -1,0 +1,15 @@
+.invisible {
+display: none;
+}
+
+.appointment-notification {
+    position: fixed; /* Fixes the footer in the viewport */
+    bottom: 0; /* Aligns the footer to the bottom */
+    right: 0; /* Aligns the footer to the right */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding for aesthetics */
+    border-radius: 8px; /* Rounded corners */
+    margin: 20px; /* Margin from edges of the viewport */
+    z-index: 1000; /* Ensures it stays above other elements */
+}

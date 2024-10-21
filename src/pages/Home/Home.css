@@ -1,0 +1,82 @@
+/* General Container */
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Landing Page */
+  .landing-page {
+    text-align: center;
+  }
+  
+  .get-started-button {
+    padding: 1em 2em;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  /* Home Page */
+  .home-page {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+  }
+  
+  .nav-items a {
+    margin: 0 1em;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .login-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .panel-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 100px; /* Padding to avoid overlap with navbar */
+  }
+  
+  .panel {
+    width: 200px;
+    height: 200px;
+    background-color: #007BFF;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px;
+  }
+
+  .panel-container a {
+    text-decoration: none;
+  }
+  

@@ -1,0 +1,29 @@
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+}
+
+
+.nav-items a {
+  margin: 0 1em;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.nav-items a:hover {
+  color: #007bff;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}

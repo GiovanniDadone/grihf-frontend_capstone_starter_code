@@ -1,0 +1,32 @@
+.reports {
+  text-align: center;
+  padding: 20px;
+}
+.reports h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.reports h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.reports ul {
+  list-style: none;
+  padding: 0;
+}
+.reports li {
+  margin-bottom: 10px;
+}
+.reports button {
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+  .reports button:hover {
+  background-color: #0056b3;
+}

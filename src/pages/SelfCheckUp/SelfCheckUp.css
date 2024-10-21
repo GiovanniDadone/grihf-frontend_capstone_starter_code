@@ -1,0 +1,52 @@
+.self-checkup-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 45%;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+  }
+  
+  .intro {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .checkup-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds space between items */
+  }
+  
+  .checkup-item {
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .checkup-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .checkup-item p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  
